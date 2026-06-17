@@ -56,27 +56,16 @@
     <a-marker type="barcode" value="0" id="ancora">
 
       <!--
-        Flor no centro do marcador, com balanço suave de "ventinho".
-        Estrutura em camadas para o efeito ficar natural:
-          - #vento-z: inclina frente/trás (eixo X) num ritmo
-          - filho:    inclina lados (eixo Z) noutro ritmo (durações diferentes
-                      = movimento orgânico, não mecânico)
-          - a flor em si fica dentro, com o scale.
-        Ajuste a intensidade do vento mudando os ângulos em "to"
-        (ex.: 3 = brisa leve, 8 = vento mais forte) e a velocidade em "dur".
-        Para trocar pelo seu modelo do Blender: exporte como flor.glb em models/.
+        Flor no centro do marcador.
+        A animação ("ventinho") vem do próprio Blender, exportada dentro do
+        flor.glb. O atributo animation-mixer toca essa animação automaticamente.
+        Ajuste scale se ficar grande/pequeno.
       -->
       <a-entity
+        gltf-model="#flor"
         position="0 0 0"
-        animation="property: rotation; from: -3 0 0; to: 3 0 0; dir: alternate; loop: true; dur: 2800; easing: easeInOutSine">
-        <a-entity
-          animation="property: rotation; from: 0 0 -2; to: 0 0 4; dir: alternate; loop: true; dur: 3700; easing: easeInOutSine">
-          <a-entity
-            gltf-model="#flor"
-            scale="1 1 1"
-            animation-mixer>
-          </a-entity>
-        </a-entity>
+        scale="1 1 1"
+        animation-mixer="loop: repeat">
       </a-entity>
 
       <!-- Luz para os modelos não ficarem escuros -->
