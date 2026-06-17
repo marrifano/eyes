@@ -1,0 +1,11 @@
+Coloque aqui seus modelos exportados do Blender, com estes nomes:
+
+  personagem1.glb
+  personagem2.glb
+  personagem3.glb
+
+(ou troque os nomes nos src do index.html)
+
+Enquanto não tiver seus modelos, o site vai dar erro de "modelo não encontrado".
+Para testar a câmera/AR antes de exportar, veja o passo "Testar sem modelo"
+no README.md.
