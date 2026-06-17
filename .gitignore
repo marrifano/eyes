@@ -1,0 +1,8 @@
+# Arquivos de projeto do Blender (pesados, não precisam ir pro site)
+*.blend
+*.blend1
+*.blend2
+
+# Backups/temporários
+*.tmp
+*~
