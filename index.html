@@ -25,7 +25,7 @@
   </style>
 </head>
 <body>
-  <div id="dica">Aponte a câmera para o marcador <b>Hiro</b> para ver os personagens ao redor.</div>
+  <div id="dica">Aponte a câmera para o marcador <b>Hiro</b> e a flor aparece.</div>
 
   <!--
     embedded + arjs: liga o modo AR.
@@ -38,9 +38,9 @@
     renderer="logarithmicDepthBuffer: true; antialias: true; alpha: true"
     arjs="sourceType: webcam; debugUIEnabled: false; trackingMethod: best;">
 
-    <!-- Pre-carrega o modelo. cena.glb contém os 4 cubos já posicionados no Blender. -->
+    <!-- Pre-carrega o modelo da flor (troque depois pelo seu GLB do Blender). -->
     <a-assets>
-      <a-asset-item id="cena" src="models/cena.glb"></a-asset-item>
+      <a-asset-item id="flor" src="models/flor.glb"></a-asset-item>
     </a-assets>
 
     <!--
@@ -54,13 +54,13 @@
     <a-marker preset="hiro" id="ancora">
 
       <!--
-        cena.glb: contém os 4 cubos já posicionados no Blender.
-        Carregado no centro do marcador. Ajuste scale se ficar grande/pequeno.
+        Flor no centro do marcador. Ajuste scale se ficar grande/pequeno.
+        Para trocar pelo seu modelo do Blender: exporte como flor.glb em models/.
       -->
       <a-entity
-        gltf-model="#cena"
+        gltf-model="#flor"
         position="0 0 0"
-        scale="0.15 0.15 0.15"
+        scale="1 1 1"
         animation-mixer>
       </a-entity>
 
