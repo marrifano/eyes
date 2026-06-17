@@ -6,3 +6,6 @@
 # Backups/temporários
 *.tmp
 *~
+
+# Scripts auxiliares de build do Blender (rodados localmente)
+_*.py
