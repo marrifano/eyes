@@ -25,7 +25,7 @@
   </style>
 </head>
 <body>
-  <div id="dica">Aponte a câmera para o marcador <b>Hiro</b> e a flor aparece.</div>
+  <div id="dica">Aponte a câmera para o marcador e a flor aparece.</div>
 
   <!--
     embedded + arjs: liga o modo AR.
@@ -36,7 +36,7 @@
     embedded
     vr-mode-ui="enabled: false"
     renderer="logarithmicDepthBuffer: true; antialias: true; alpha: true"
-    arjs="sourceType: webcam; debugUIEnabled: false; trackingMethod: best;">
+    arjs="sourceType: webcam; debugUIEnabled: false; trackingMethod: best; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
 
     <!-- Pre-carrega o modelo da flor (troque depois pelo seu GLB do Blender). -->
     <a-assets>
@@ -45,13 +45,15 @@
 
     <!--
       O <a-marker> é a ÂNCORA. Tudo dentro dele aparece quando o marcador
-      "Hiro" é detectado. Os personagens são posicionados EM VOLTA do centro.
+      é detectado. Agora usamos BARCODE MARKER (tipo QR simples, estável):
+      value="0" = marcador de número 0 (matriz 3x3).
+      Imagem do marcador para imprimir/mostrar: models/marcador0.png
       Eixos (em metros, relativo ao marcador):
         x = esquerda(-)/direita(+)
         y = baixo(-)/cima(+)
         z = frente(+, em direção a você)/atrás(-)
     -->
-    <a-marker preset="hiro" id="ancora">
+    <a-marker type="barcode" value="0" id="ancora">
 
       <!--
         Flor no centro do marcador. Ajuste scale se ficar grande/pequeno.
